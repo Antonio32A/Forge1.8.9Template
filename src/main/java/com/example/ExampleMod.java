@@ -1,7 +1,7 @@
 package com.example;
 
 import com.example.events.packet.PacketEvent;
-import com.example.events.packet.PacketHandler;
+import com.example.events.packet.PacketListener;
 import net.minecraft.network.play.client.C01PacketChatMessage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -13,7 +13,7 @@ public class ExampleMod {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.register(PacketHandler.INSTANCE);
+        MinecraftForge.EVENT_BUS.register(new PacketListener());
     }
 
     @SubscribeEvent
